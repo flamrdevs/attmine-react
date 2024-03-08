@@ -1,7 +1,8 @@
 import setupCore from "@klass/core/setup";
 import type { Config } from "@klass/core/setup";
 import setupCoreGroup from "@klass/core/group/setup";
-import setupReact from "@klass/react/setup";
+import setupFramework from "@klass/react/setup";
+import setupMonoFramework from "@klass/react/mono/setup";
 
 import { twMerge } from "tailwind-merge";
 
@@ -15,5 +16,6 @@ const config: Config = {
 export const cn = (...classValues: ClassValue[]) => twMerge(clsx(classValues));
 
 export const [klass, reklass] = setupCore(config);
-export const [klassed, reklassed] = setupReact(config);
+export const [klassed, reklassed] = setupFramework(config);
+export const [mklassed, mreklassed] = setupMonoFramework(config);
 export const group = setupCoreGroup(config);
